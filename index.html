@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedro Ferreira — 17 Anos | Academia, Pizza &amp; Vibe</title>
+  <!-- Fonte Inter para leitura limpa e moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#0b0c10',
+            charcoal: '#12141c',
+            surface: '#181b26',
+            ember: '#ff5a1f',
+            flame: '#ff8a3d',
+            amberGlow: '#ffb347',
+          },
+          boxShadow: {
+            glow: '0 0 30px -5px rgba(255, 90, 31, 0.35)',
+            card: '0 12px 32px -12px rgba(0, 0, 0, 0.65)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Estilos complementares para animações suaves, brilho de fundo e interações */
+    body {
+      background-color: #0b0c10;
+      color: #f4f5f7;
+      overflow-x: hidden;
+    }
+
+    .hero-mesh {
+      background-image:
+        radial-gradient(circle at 18% 22%, rgba(255, 90, 31, 0.18), transparent 42%),
+        radial-gradient(circle at 82% 18%, rgba(255, 179, 71, 0.12), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(255, 138, 61, 0.10), transparent 48%);
+    }
+
+    .glass-panel {
+      background: rgba(24, 27, 38, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Animação de revelação ao rolar a página */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cartão de perfil 3D sutil */
+    .profile-tilt-wrapper {
+      perspective: 1100px;
+    }
+
+    .profile-tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.22s ease-out, box-shadow 0.25s ease;
+    }
+
+    /* Estilização customizada para inputs range */
+    input[type="range"].warm-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 10px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+
+    input[type="range"].warm-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #ff5a1f, #ffb347);
+      cursor: pointer;
+      border: 3px solid #12141c;
+      box-shadow: 0 0 14px rgba(255, 90, 31, 0.7);
+      transition: transform 0.15s ease;
+    }
+
+    input[type="range"].warm-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+
+    input[type="range"].warm-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #ff5a1f, #ffb347);
+      cursor: pointer;
+      border: 3px solid #12141c;
+      box-shadow: 0 0 14px rgba(255, 90, 31, 0.7);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-ember selection:text-white">
+  <!-- Barra de navegação fixa no topo -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-obsidian/85 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+      <a href="#topo" class="group flex items-center gap-2.5 rounded-xl p-1 focus:outline-none">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-ember via-flame to-amberGlow text-sm font-black text-obsidian shadow-glow transition-transform duration-300 group-hover:scale-105">
+          PF
+        </span>
+        <div>
+          <span class="block text-sm font-bold tracking-tight text-white">Pedro Ferreira</span>
+          <span class="block text-[11px] font-medium text-orange-300/80">17 anos • Ferro &amp; Forno</span>
+        </div>
+      </a>
+
+      <!-- Navegação em telas médias e grandes -->
+      <nav aria-label="Navegação principal" class="hidden items-center gap-1 md:flex">
+        <a href="#sobre" class="rounded-xl px-3.5 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-orange-300">
+          Sobre Mim
+        </a>
+        <a href="#duelo" class="rounded-xl px-3.5 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-orange-300">
+          Academia vs. Pizza
+        </a>
+        <a href="#simulador" class="rounded-xl px-3.5 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-orange-300">
+          Equilíbrio do Dia
+        </a>
+        <a href="#metas" class="rounded-xl px-3.5 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-orange-300">
+          Metas &amp; Vibe
+        </a>
+      </nav>
+
+      <!-- Botão de ação rápida -->
+      <a href="#simulador" class="rounded-xl bg-gradient-to-r from-ember to-flame px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-glow transition hover:brightness-110 active:scale-95 sm:text-sm">
+        Testar Dia
+      </a>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- 1) HERO SECTION DE BOAS-VINDAS -->
+    <section class="hero-mesh relative overflow-hidden border-b border-white/10 pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          <!-- Coluna principal de apresentação -->
+          <div class="space-y-6 lg:col-span-7">
+            <div class="inline-flex flex-wrap items-center gap-2 rounded-2xl border border-orange-400/25 bg-orange-500/10 px-3.5 py-1.5 text-xs font-semibold text-orange-300 sm:text-sm">
+              <span class="h-2 w-2 animate-pulse rounded-full bg-amberGlow"></span>
+              <span>Pedro Ferreira • 17 anos</span>
+              <span class="text-orange-200/50">|</span>
+              <span>Foco no treino &amp; paixão por pizza</span>
+            </div>
+
+            <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Treino pesado na academia e
+              <span class="bg-gradient-to-r from-ember via-flame to-amberGlow bg-clip-text text-transparent">
+                pizza boa
+              </span>
+              no momento certo.
+            </h1>
+
+            <p class="max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
+              E aí! Eu sou o <strong class="font-semibold text-white">Pedro Ferreira</strong>, tenho <strong class="font-semibold text-white">17 anos</strong> e acredito que constância não precisa ser sinônimo de viver infeliz. Curto puxar ferro, evoluir na academia e aproveitar uma fatia de pizza quentinha sem culpa exagerada.
+            </p>
+
+            <!-- Botões de navegação rápida -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-1">
+              <a href="#sobre" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-ember to-flame px-6 py-3.5 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0">
+                <span>Conhecer minha rotina</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#duelo" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-surface/90 px-6 py-3.5 text-sm font-semibold text-gray-100 transition hover:border-orange-400/40 hover:bg-surface">
+                <span>Academia vs. Pizza</span>
+              </a>
+            </div>
+
+            <!-- Destaques rápidos de Academia e Pizza -->
+            <div class="grid grid-cols-1 gap-3.5 pt-3 sm:grid-cols-2">
+              <div class="glass-panel group rounded-2xl p-4 transition duration-300 hover:-translate-y-0.5 hover:border-ember/40">
+                <div class="flex items-start gap-3.5">
+                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ember/15 text-xl transition group-hover:scale-105">
+                    🏋️‍♂️
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-orange-300">Destaque Academia</p>
+                    <p class="mt-0.5 text-sm font-semibold text-white">Progressão de carga &amp; consistência</p>
+                    <p class="mt-1 text-xs text-gray-400">Treinos estruturados para ganhar força, postura e energia diária.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-panel group rounded-2xl p-4 transition duration-300 hover:-translate-y-0.5 hover:border-amberGlow/40">
+                <div class="flex items-start gap-3.5">
+                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amberGlow/15 text-xl transition group-hover:scale-105">
+                    🍕
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-amberGlow">Destaque Pizza</p>
+                    <p class="mt-0.5 text-sm font-semibold text-white">Massa no ponto &amp; recheio caprichado</p>
+                    <p class="mt-1 text-xs text-gray-400">Clássica, bem assada e dividida com quem soma na resenha.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão visual lateral no Hero -->
+          <div class="lg:col-span-5">
+            <div class="glass-panel relative rounded-3xl p-6 shadow-card sm:p-7">
+              <div class="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-orange-300">Resumo do Pedro</span>
+                  <h2 class="mt-1 text-xl font-extrabold text-white">Modo Vida Real</h2>
+                </div>
+                <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300 border border-emerald-400/25">
+                  17 Anos • Ativo
+                </span>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-2xl bg-charcoal/90 p-4 border border-white/5">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="font-semibold text-gray-200">🔥 Disciplina no Treino</span>
+                    <span class="font-bold text-flame">Alta</span>
+                  </div>
+                  <div class="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                    <div class="h-full w-[88%] rounded-full bg-gradient-to-r from-ember to-flame"></div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl bg-charcoal/90 p-4 border border-white/5">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="font-semibold text-gray-200">🍕 Amor por uma boa Pizza</span>
+                    <span class="font-bold text-amberGlow">Máxima</span>
+                  </div>
+                  <div class="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                    <div class="h-full w-[96%] rounded-full bg-gradient-to-r from-flame to-amberGlow"></div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl bg-charcoal/90 p-4 border border-white/5">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="font-semibold text-gray-200">⚖️ Equilíbrio na Semana</span>
+                    <span class="font-bold text-orange-300">Sustentável</span>
+                  </div>
+                  <div class="mt-2.5 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                    <div class="h-full w-[82%] rounded-full bg-gradient-to-r from-ember via-flame to-amberGlow"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 rounded-2xl border border-orange-400/20 bg-gradient-to-r from-ember/15 to-amberGlow/10 p-4 text-sm text-gray-200">
+                <p class="leading-relaxed">
+                  <span class="font-bold text-amberGlow">Frase do Pedro:</span> “Não é sobre perfeição em um único dia, é sobre voltar firme no outro e curtir a vida de verdade.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) SEÇÃO "SOBRE MIM" -->
+    <section id="sobre" class="border-b border-white/10 py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item max-w-3xl">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-ember">Sobre Mim</span>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            Uma rotina pé no chão entre o ferro e o forno
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-gray-300 sm:text-lg">
+            Com 17 anos, estou numa fase de construir hábitos que realmente façam sentido para mim. A academia me ensinou paciência, foco e respeito ao processo; já a pizza representa aqueles momentos de recompensa, conversa boa e sabor sem pressa.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <!-- Pilar 1 -->
+          <article class="reveal-item glass-panel rounded-3xl p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-ember/40">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-ember/15 text-2xl">
+              💪
+            </div>
+            <h3 class="text-xl font-bold text-white">Consistência na Academia</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-gray-300">
+              Gosto de treinar com intenção: aquecer bem, executar os movimentos com controle e anotar evolução aos poucos. Cada série conta para construir disciplina dentro e fora da academia.
+            </p>
+          </article>
+
+          <!-- Pilar 2 -->
+          <article class="reveal-item glass-panel rounded-3xl p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-amberGlow/40">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-amberGlow/15 text-2xl">
+              🍕
+            </div>
+            <h3 class="text-xl font-bold text-white">Paixão por Boa Pizza</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-gray-300">
+              Para mim, pizza é mais do que comida: é encontro, risada e sabor. Seja no fim de semana ou depois de um dia puxado, uma boa fatia renova o humor na hora.
+            </p>
+          </article>
+
+          <!-- Pilar 3 -->
+          <article class="reveal-item glass-panel rounded-3xl p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-flame/40">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-flame/15 text-2xl">
+              ⚡
+            </div>
+            <h3 class="text-xl font-bold text-white">Rotina Sem Extremos</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-gray-300">
+              Não vivo de radicalismo. Quando o treino está em dia, a hidratação anda bem e o sono encaixa, comer pizza vira parte natural de uma rotina leve e sustentável.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) SEÇÃO INTERATIVA "ACADEMIA VS. PIZZA" + SIMULADOR "EQUILÍBRIO DO DIA" -->
+    <section id="duelo" class="border-b border-white/10 bg-charcoal/50 py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-flame">Academia vs. Pizza</span>
+            <h2 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              Dois lados que se completam
+            </h2>
+            <p class="mt-3 text-base text-gray-300">
+              Explore os favoritos, curiosidades e o jeito que eu encaro cada um desses mundos.
+            </p>
+          </div>
+
+          <!-- Abas interativas -->
+          <div role="tablist" aria-label="Abas de Academia vs Pizza" class="inline-flex rounded-2xl border border-white/10 bg-obsidian p-1.5">
+            <button
+              id="tab-academia"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-academia"
+              type="button"
+              class="tab-btn rounded-xl bg-gradient-to-r from-ember to-flame px-4 py-2.5 text-sm font-bold text-white shadow transition"
+            >
+              🏋️‍♂️ Academia
+            </button>
+            <button
+              id="tab-pizza"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-pizza"
+              type="button"
+              class="tab-btn rounded-xl px-4 py-2.5 text-sm font-bold text-gray-300 transition hover:text-white"
+            >
+              🍕 Pizza
+            </button>
+            <button
+              id="tab-curiosidades"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-curiosidades"
+              type="button"
+              class="tab-btn rounded-xl px-4 py-2.5 text-sm font-bold text-gray-300 transition hover:text-white"
+            >
+              ✨ Curiosidades
+            </button>
+          </div>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div class="reveal-item mt-8">
+          <!-- Painel Academia -->
+          <div id="panel-academia" role="tabpanel" aria-labelledby="tab-academia" class="tab-panel glass-panel rounded-3xl p-6 shadow-card sm:p-8">
+            <div class="grid gap-6 lg:grid-cols-12">
+              <div class="space-y-4 lg:col-span-7">
+                <span class="inline-block rounded-lg bg-ember/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange-300">
+                  Foco de Treino do Pedro
+                </span>
+                <h3 class="text-2xl font-extrabold text-white">Força base, boa técnica e evolução constante</h3>
+                <p class="text-sm leading-relaxed text-gray-300 sm:text-base">
+                  Na academia, eu curto treinos bem divididos para trabalhar o corpo de forma equilibrada. Priorizo execução limpa antes de socar peso, descanso adequado entre séries e boa alimentação no dia a dia.
+                </p>
+                <div class="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-3">
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-orange-300">Foco 01</p>
+                    <p class="mt-1 text-sm font-bold text-white">Superiores &amp; Costas</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-orange-300">Foco 02</p>
+                    <p class="mt-1 text-sm font-bold text-white">Pernas com Firmeza</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-orange-300">Foco 03</p>
+                    <p class="mt-1 text-sm font-bold text-white">Core &amp; Mobilidade</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col justify-between rounded-2xl border border-orange-400/20 bg-gradient-to-br from-ember/15 via-surface to-obsidian p-5 lg:col-span-5">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-amberGlow">Pré &amp; Pós-Treino na Prática</p>
+                  <ul class="mt-3 space-y-2.5 text-sm text-gray-200">
+                    <li class="flex items-start gap-2">
+                      <span class="text-flame">•</span>
+                      <span>Carboidrato simples ou moderado para ter disposição real no treino.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-flame">•</span>
+                      <span>Água o dia inteiro para não cair o rendimento.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-flame">•</span>
+                      <span>Sono decente para o corpo recuperar de verdade.</span>
+                    </li>
+                  </ul>
+                </div>
+                <p class="mt-4 text-xs font-medium text-orange-200/80">
+                  Dica do Pedro: constância vence treino esporádico pesado demais.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Painel Pizza -->
+          <div id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza" class="tab-panel hidden glass-panel rounded-3xl p-6 shadow-card sm:p-8">
+            <div class="grid gap-6 lg:grid-cols-12">
+              <div class="space-y-4 lg:col-span-7">
+                <span class="inline-block rounded-lg bg-amberGlow/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amberGlow">
+                  Estilos &amp; Sabores Favoritos
+                </span>
+                <h3 class="text-2xl font-extrabold text-white">Borda bem assada, queijo derretido e zero drama</h3>
+                <p class="text-sm leading-relaxed text-gray-300 sm:text-base">
+                  Pizza é o meu ponto fraco favorito. Gosto da mistura de massa crocante por fora e macia por dentro, com molho bem temperado e recheio que não economiza.
+                </p>
+                <div class="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-3">
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-amberGlow">Clássica</p>
+                    <p class="mt-1 text-sm font-bold text-white">Calabresa Acebolada</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-amberGlow">Campeã</p>
+                    <p class="mt-1 text-sm font-bold text-white">Frango com Catupiry</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-3.5">
+                    <p class="text-xs font-semibold text-amberGlow">Tradicional</p>
+                    <p class="mt-1 text-sm font-bold text-white">Margherita Caprichada</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col justify-between rounded-2xl border border-amberGlow/25 bg-gradient-to-br from-amberGlow/15 via-surface to-obsidian p-5 lg:col-span-5">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-amberGlow">Regras de Ouro da Fatia</p>
+                  <ul class="mt-3 space-y-2.5 text-sm text-gray-200">
+                    <li class="flex items-start gap-2">
+                      <span class="text-amberGlow">•</span>
+                      <span>Comer com calma e aproveitar cada mordida.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amberGlow">•</span>
+                      <span>Zero culpa exagerada: uma pizza não estraga uma boa semana.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amberGlow">•</span>
+                      <span>Se sobrar fatia para o dia seguinte, é bônus puro.</span>
+                    </li>
+                  </ul>
+                </div>
+                <p class="mt-4 text-xs font-medium text-amber-200/80">
+                  Veredito do Pedro: pizza boa une pessoas e recarrega as baterias.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Painel Curiosidades -->
+          <div id="panel-curiosidades" role="tabpanel" aria-labelledby="tab-curiosidades" class="tab-panel hidden glass-panel rounded-3xl p-6 shadow-card sm:p-8">
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-5">
+                <span class="text-2xl">🎯</span>
+                <h4 class="mt-3 text-base font-bold text-white">17 Anos de Foco</h4>
+                <p class="mt-1.5 text-xs leading-relaxed text-gray-300 sm:text-sm">
+                  Construindo base física e mental cedo, sem precisar abrir mão de curtir a juventude.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-5">
+                <span class="text-2xl">🍕</span>
+                <h4 class="mt-3 text-base font-bold text-white">Fatia Pós-Treino?</h4>
+                <p class="mt-1.5 text-xs leading-relaxed text-gray-300 sm:text-sm">
+                  Carboidrato + proteína no mesmo prato? Sim, por favor! Só vale medir a quantidade no dia a dia.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-5">
+                <span class="text-2xl">🎧</span>
+                <h4 class="mt-3 text-base font-bold text-white">Som no Fone</h4>
+                <p class="mt-1.5 text-xs leading-relaxed text-gray-300 sm:text-sm">
+                  Uma boa playlist ajuda a manter o ritmo nas séries mais pesadas da academia.
+                </p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-obsidian/80 p-5">
+                <span class="text-2xl">⚖️</span>
+                <h4 class="mt-3 text-base font-bold text-white">Regra dos 80/20</h4>
+                <p class="mt-1.5 text-xs leading-relaxed text-gray-300 sm:text-sm">
+                  Maior parte do tempo focado nos hábitos essenciais e espaço livre para a pizza sem peso na consciência.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIMULADOR INTERATIVO "EQUILÍBRIO DO DIA" -->
+        <div id="simulador" class="reveal-item mt-12 rounded-3xl border border-orange-400/25 bg-gradient-to-br from-surface via-charcoal to-obsidian p-6 shadow-card sm:p-8">
+          <div class="flex flex-col justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-center">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-ember/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange-300">
+                <span>⚖️</span> Simulador Interativo
+              </span>
+              <h3 class="mt-2 text-2xl font-black text-white sm:text-3xl">
+                Equilíbrio do Dia do Pedro
+              </h3>
+              <p class="mt-1 text-sm text-gray-300">
+                Ajuste os controles ou escolha um preset rápido para ver como treino e pizza se encaixam no dia!
+              </p>
+            </div>
+
+            <!-- Botões de cenários rápidos -->
+            <div class="flex flex-wrap gap-2">
+              <button
+                id="preset-treino"
+                type="button"
+                class="rounded-xl border border-white/15 bg-obsidian px-3.5 py-2 text-xs font-bold text-gray-200 transition hover:border-ember hover:text-white"
+              >
+                🏋️ Dia de Treino Forte
+              </button>
+              <button
+                id="preset-equilibrado"
+                type="button"
+                class="rounded-xl border border-orange-400/40 bg-ember/20 px-3.5 py-2 text-xs font-bold text-orange-200 transition hover:bg-ember/30"
+              >
+                ⚖️ Dia Equilibrado
+              </button>
+              <button
+                id="preset-pizza"
+                type="button"
+                class="rounded-xl border border-white/15 bg-obsidian px-3.5 py-2 text-xs font-bold text-gray-200 transition hover:border-amberGlow hover:text-white"
+              >
+                🍕 Noite da Pizza
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-7 grid gap-8 lg:grid-cols-12 lg:items-center">
+            <!-- Controles deslizantes -->
+            <div class="space-y-6 lg:col-span-7">
+              <!-- Controle de Treino -->
+              <div class="rounded-2xl border border-white/10 bg-obsidian/75 p-5">
+                <div class="mb-3 flex items-center justify-between">
+                  <label for="slider-treino" class="text-sm font-bold text-white">
+                    🏋️‍♂️ Intensidade do Treino na Academia
+                  </label>
+                  <span id="valor-treino" class="rounded-lg bg-ember/20 px-2.5 py-1 text-xs font-extrabold text-orange-300">
+                    60%
+                  </span>
+                </div>
+                <input
+                  id="slider-treino"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="5"
+                  value="60"
+                  class="warm-slider"
+                />
+                <div class="mt-2 flex justify-between text-[11px] font-medium text-gray-400">
+                  <span>Descanso / Leve</span>
+                  <span>Moderado</span>
+                  <span>Treino Pesado</span>
+                </div>
+              </div>
+
+              <!-- Controle de Pizza -->
+              <div class="rounded-2xl border border-white/10 bg-obsidian/75 p-5">
+                <div class="mb-3 flex items-center justify-between">
+                  <label for="slider-pizza" class="text-sm font-bold text-white">
+                    🍕 Vontade / Porção de Pizza no Dia
+                  </label>
+                  <span id="valor-pizza" class="rounded-lg bg-amberGlow/20 px-2.5 py-1 text-xs font-extrabold text-amberGlow">
+                    40% (2-3 fatias)
+                  </span>
+                </div>
+                <input
+                  id="slider-pizza"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="5"
+                  value="40"
+                  class="warm-slider"
+                />
+                <div class="mt-2 flex justify-between text-[11px] font-medium text-gray-400">
+                  <span>Zero pizza hoje</span>
+                  <span>Algumas fatias</span>
+                  <span>Rodízio / Banquete</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painel de resultado motivacional -->
+            <div class="lg:col-span-5">
+              <div id="simulador-card" class="rounded-3xl border border-white/10 bg-obsidian/90 p-6 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Status do Dia</span>
+                  <span id="simulador-badge" class="rounded-full bg-gradient-to-r from-ember to-amberGlow px-3 py-1 text-xs font-black text-obsidian">
+                    Vibe Equilibrada
+                  </span>
+                </div>
+
+                <h4 id="simulador-titulo" class="mt-4 text-xl font-extrabold text-white">
+                  Combinação certeira para manter o ritmo!
+                </h4>
+
+                <p id="simulador-mensagem" class="mt-2.5 text-sm leading-relaxed text-gray-300">
+                  Treino bem feito e algumas fatias de pizza sem exagero: você recarrega as energias, mantém a cabeça leve e continua firme no progresso.
+                </p>
+
+                <!-- Barra visual de proporção -->
+                <div class="mt-5">
+                  <div class="mb-1.5 flex justify-between text-xs font-semibold">
+                    <span class="text-orange-300">Treino: <span id="perc-treino">60%</span></span>
+                    <span class="text-amberGlow">Pizza: <span id="perc-pizza">40%</span></span>
+                  </div>
+                  <div class="flex h-3 w-full overflow-hidden rounded-full bg-white/10">
+                    <div id="barra-treino" class="h-full bg-gradient-to-r from-ember to-flame transition-all duration-300" style="width: 60%;"></div>
+                    <div id="barra-pizza" class="h-full bg-amberGlow transition-all duration-300" style="width: 40%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) SEÇÃO "METAS E VIBE" + CARTÃO DE PERFIL INTERATIVO -->
+    <section id="metas" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item max-w-2xl">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-ember">Metas &amp; Vibe</span>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
+            Para onde eu quero ir e como eu curto viver
+          </h2>
+          <p class="mt-3 text-base text-gray-300">
+            Passe o mouse ou toque no cartão interativo ao lado para ver a vibe do Pedro em movimento.
+          </p>
+        </div>
+
+        <div class="mt-10 grid items-center gap-10 lg:grid-cols-12">
+          <!-- Lista de metas e vibe -->
+          <div class="space-y-4 lg:col-span-7">
+            <div class="reveal-item glass-panel flex items-start gap-4 rounded-2xl p-5 transition hover:border-ember/40">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ember/15 text-lg font-black text-flame">
+                01
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-white">Manter a constância além da motivação</h3>
+                <p class="mt-1 text-sm leading-relaxed text-gray-300">
+                  Ir treinar mesmo nos dias comuns, respeitando o corpo e evoluindo com segurança.
+                </p>
+              </div>
+            </div>
+
+            <div class="reveal-item glass-panel flex items-start gap-4 rounded-2xl p-5 transition hover:border-amberGlow/40">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amberGlow/15 text-lg font-black text-amberGlow">
+                02
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-white">Curtir boas pizzas sem peso na consciência</h3>
+                <p class="mt-1 text-sm leading-relaxed text-gray-300">
+                  Equilíbrio de verdade permite celebrar conquistas e momentos bons com uma pizza caprichada.
+                </p>
+              </div>
+            </div>
+
+            <div class="reveal-item glass-panel flex items-start gap-4 rounded-2xl p-5 transition hover:border-flame/40">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame/15 text-lg font-black text-orange-300">
+                03
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-white">Evoluir aos 17 anos com leveza</h3>
+                <p class="mt-1 text-sm leading-relaxed text-gray-300">
+                  Construir saúde, confiança e boas memórias sem transformar a rotina em pressão tóxica.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão de Perfil Interativo -->
+          <div class="reveal-item profile-tilt-wrapper lg:col-span-5">
+            <div
+              id="interactive-profile-card"
+              class="profile-tilt-card relative overflow-hidden rounded-3xl border border-orange-400/30 bg-gradient-to-br from-surface via-charcoal to-obsidian p-6 shadow-glow sm:p-8"
+            >
+              <!-- Brilho decorativo interno -->
+              <div class="pointer-events-none -right-12 -top-12 absolute h-40 w-40 rounded-full bg-ember/20 blur-2xl"></div>
+              <div class="pointer-events-none -bottom-14 -left-10 h-40 w-40 rounded-full bg-amberGlow/15 blur-2xl"></div>
+
+              <div class="relative z-10">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-xl bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange-300">
+                    Cartão do Pedro
+                  </span>
+                  <span class="text-2xl" aria-hidden="true">🔥🍕</span>
+                </div>
+
+                <div class="mt-6 flex items-center gap-4">
+                  <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-ember via-flame to-amberGlow text-2xl font-black text-obsidian shadow-lg">
+                    PF
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-black text-white">Pedro Ferreira</h3>
+                    <p class="text-sm font-medium text-orange-200/85">17 anos • Academia &amp; Pizza</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3 border-t border-white/10 pt-5 text-center">
+                  <div class="rounded-2xl bg-obsidian/70 p-3">
+                    <p class="text-lg font-black text-flame">100%</p>
+                    <p class="text-xs text-gray-400">Vontade de evoluir</p>
+                  </div>
+                  <div class="rounded-2xl bg-obsidian/70 p-3">
+                    <p class="text-lg font-black text-amberGlow">∞</p>
+                    <p class="text-xs text-gray-400">Espaço p/ pizza boa</p>
+                  </div>
+                </div>
+
+                <div class="mt-5 flex flex-wrap items-center justify-between gap-3 pt-1">
+                  <span id="vibe-status-text" class="text-xs font-semibold text-gray-300">
+                    Vibe atual: Foco + Sabor
+                  </span>
+                  <button
+                    id="btn-boost-vibe"
+                    type="button"
+                    class="rounded-xl bg-gradient-to-r from-ember to-flame px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-white shadow transition hover:brightness-110 active:scale-95"
+                  >
+                    Mandar Vibe ⚡
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-white/10 bg-charcoal py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center sm:flex-row sm:px-6 sm:text-left lg:px-8">
+      <div>
+        <p class="text-sm font-bold text-white">Pedro Ferreira • 17 Anos</p>
+        <p class="text-xs text-gray-400">Feito com HTML, CSS e JavaScript — treinos firmes e boas pizzas.</p>
+      </div>
+      <a href="#topo" class="rounded-xl border border-white/10 bg-obsidian px-4 py-2 text-xs font-semibold text-gray-200 transition hover:border-orange-400/40 hover:text-orange-300">
+        Voltar ao topo ↑
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * Inicializa todas as interações da página de Pedro Ferreira
+     * com tratamento seguro para evitar erros caso algum elemento não exista.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        initTabs();
+        initEquilibrioSimulator();
+        initProfileCardInteractions();
+        initScrollReveal();
+      } catch (error) {
+        console.error('Erro ao iniciar interações da página:', error);
+      }
+    });
+
+    /**
+     * Gerencia as abas interativas da seção "Academia vs. Pizza"
+     */
+    function initTabs() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      if (!tabs.length || !panels.length) return;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const targetPanelId = tab.getAttribute('aria-controls');
+
+          // Atualiza estado visual e acessibilidade das abas
+          tabs.forEach((btn) => {
+            const isSelected = btn === tab;
+            btn.setAttribute('aria-selected', String(isSelected));
+            if (isSelected) {
+              btn.classList.add('bg-gradient-to-r', 'from-ember', 'to-flame', 'text-white', 'shadow');
+              btn.classList.remove('text-gray-300', 'hover:text-white');
+            } else {
+              btn.classList.remove('bg-gradient-to-r', 'from-ember', 'to-flame', 'text-white', 'shadow');
+              btn.classList.add('text-gray-300', 'hover:text-white');
+            }
+          });
+
+          // Exibe apenas o painel correspondente
+          panels.forEach((panel) => {
+            if (panel.id === targetPanelId) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        });
+      });
+    }
+
+    /**
+     * Gerencia o simulador lúdico e motivacional "Equilíbrio do Dia"
+     */
+    function initEquilibrioSimulator() {
+      const sliderTreino = document.getElementById('slider-treino');
+      const sliderPizza = document.getElementById('slider-pizza');
+      const valorTreino = document.getElementById('valor-treino');
+      const valorPizza = document.getElementById('valor-pizza');
+      const percTreino = document.getElementById('perc-treino');
+      const percPizza = document.getElementById('perc-pizza');
+      const barraTreino = document.getElementById('barra-treino');
+      const barraPizza = document.getElementById('barra-pizza');
+      const badge = document.getElementById('simulador-badge');
+      const titulo = document.getElementById('simulador-titulo');
+      const mensagem = document.getElementById('simulador-mensagem');
+
+      const presetTreino = document.getElementById('preset-treino');
+      const presetEquilibrado = document.getElementById('preset-equilibrado');
+      const presetPizza = document.getElementById('preset-pizza');
+
+      if (!sliderTreino || !sliderPizza) return;
+
+      function estimateSlices(pizzaPercent) {
+        if (pizzaPercent === 0) return '0 fatias';
+        if (pizzaPercent <= 25) return '1-2 fatias';
+        if (pizzaPercent <= 55) return '2-4 fatias';
+        if (pizzaPercent <= 80) return '4-6 fatias';
+        return 'modo rodízio';
+      }
+
+      function updateSimulator() {
+        const treino = Number(sliderTreino.value) || 0;
+        const pizza = Number(sliderPizza.value) || 0;
+
+        valorTreino.textContent = `${treino}%`;
+        valorPizza.textContent = `${pizza}% (${estimateSlices(pizza)})`;
+
+        // Calcula proporção visual entre os dois valores
+        const total = treino + pizza;
+        const treinoShare = total > 0 ? Math.round((treino / total) * 100) : 50;
+        const pizzaShare = total > 0 ? 100 - treinoShare : 50;
+
+        percTreino.textContent = `${treinoShare}%`;
+        percPizza.textContent = `${pizzaShare}%`;
+        barraTreino.style.width = `${treinoShare}%`;
+        barraPizza.style.width = `${pizzaShare}%`;
+
+        // Define mensagem motivacional conforme a combinação
+        if (treino >= 70 && pizza <= 45) {
+          badge.textContent = 'Foco Total + Recompensa';
+          titulo.textContent = 'Treino firme e pizza na medida certa!';
+          mensagem.textContent =
+            'Você mandou bem na academia e ainda deixou espaço para curtir uma pizza com tranquilidade. É assim que a rotina funciona a longo prazo.';
+        } else if (pizza >= 70 && treino >= 60) {
+          badge.textContent = 'Recarga Máxima';
+          titulo.textContent = 'Gastou energia e repôs com estilo!';
+          mensagem.textContent =
+            'Dia intenso de treino acompanhado de uma boa dose de pizza. Hidrate-se bem, durma legal e amanhã você volta com tudo.';
+        } else if (pizza >= 70 && treino < 60) {
+          badge.textContent = 'Noite de Resenha';
+          titulo.textContent = 'Pizza liberada sem culpa!';
+          mensagem.textContent =
+            'Nem todo dia é de recorde na academia. Aproveite a pizza, dê boas risadas e retome os treinos naturalmente quando o corpo pedir.';
+        } else if (treino >= 65 && pizza < 25) {
+          badge.textContent = 'Modo Disciplina';
+          titulo.textContent = 'Dia ultra focado na academia!';
+          mensagem.textContent =
+            'Alta entrega no treino e pouca ou nenhuma pizza hoje. E se bater vontade de uma fatia amanhã, tudo bem também!';
+        } else {
+          badge.textContent = 'Vibe Equilibrada';
+          titulo.textContent = 'Combinação certeira para manter o ritmo!';
+          mensagem.textContent =
+            'Treino bem feito e algumas fatias de pizza sem exagero: você recarrega as energias, mantém a cabeça leve e continua firme no progresso.';
+        }
+      }
+
+      sliderTreino.addEventListener('input', updateSimulator);
+      sliderPizza.addEventListener('input', updateSimulator);
+
+      if (presetTreino) {
+        presetTreino.addEventListener('click', () => {
+          sliderTreino.value = '85';
+          sliderPizza.value = '25';
+          updateSimulator();
+        });
+      }
+
+      if (presetEquilibrado) {
+        presetEquilibrado.addEventListener('click', () => {
+          sliderTreino.value = '60';
+          sliderPizza.value = '40';
+          updateSimulator();
+        });
+      }
+
+      if (presetPizza) {
+        presetPizza.addEventListener('click', () => {
+          sliderTreino.value = '45';
+          sliderPizza.value = '85';
+          updateSimulator();
+        });
+      }
+
+      updateSimulator();
+    }
+
+    /**
+     * Adiciona efeito sutil de inclinação e botão interativo ao cartão de perfil
+     */
+    function initProfileCardInteractions() {
+      const card = document.getElementById('interactive-profile-card');
+      const btnVibe = document.getElementById('btn-boost-vibe');
+      const vibeStatus = document.getElementById('vibe-status-text');
+
+      if (!card) return;
+
+      const supportsHover = window.matchMedia('(hover: hover)').matches;
+
+      if (supportsHover) {
+        card.addEventListener('mousemove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = ((x - centerX) / centerX) * 7;
+          const rotateX = ((centerY - y) / centerY) * 7;
+
+          card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+      }
+
+      if (btnVibe && vibeStatus) {
+        const vibes = [
+          'Vibe atual: Foco + Sabor',
+          'Vibe atual: Série pesada & borda crocante',
+          'Vibe atual: 17 anos com energia lá em cima',
+          'Vibe atual: Equilíbrio sem frescura',
+        ];
+        let vibeIndex = 0;
+
+        btnVibe.addEventListener('click', () => {
+          vibeIndex = (vibeIndex + 1) % vibes.length;
+          vibeStatus.textContent = vibes[vibeIndex];
+
+          card.classList.add('ring-2', 'ring-amberGlow/60');
+          setTimeout(() => {
+            card.classList.remove('ring-2', 'ring-amberGlow/60');
+          }, 350);
+        });
+      }
+    }
+
+    /**
+     * Revela suavemente os elementos conforme o usuário rola a página
+     */
+    function initScrollReveal() {
+      const items = document.querySelectorAll('.reveal-item');
+      if (!items.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        items.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: '0px 0px -30px 0px',
+        }
+      );
+
+      items.forEach((item) => observer.observe(item));
+    }
+  </script>
+</body>
+</html>
